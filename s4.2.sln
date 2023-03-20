@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33110.190
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "fibonachi", "fibonachi\fibonachi.csproj", "{107BA343-E45C-4C34-B35D-B2D63E91E9EA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "factorial", "factorial\factorial.csproj", "{955948FF-8070-455C-8D62-A6784FB5D10F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{107BA343-E45C-4C34-B35D-B2D63E91E9EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{107BA343-E45C-4C34-B35D-B2D63E91E9EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{107BA343-E45C-4C34-B35D-B2D63E91E9EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{107BA343-E45C-4C34-B35D-B2D63E91E9EA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{955948FF-8070-455C-8D62-A6784FB5D10F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{955948FF-8070-455C-8D62-A6784FB5D10F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{955948FF-8070-455C-8D62-A6784FB5D10F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{955948FF-8070-455C-8D62-A6784FB5D10F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D8526358-50F3-438B-9512-97CA8AB42862}
+	EndGlobalSection
+EndGlobal
