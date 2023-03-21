@@ -8,22 +8,23 @@ namespace BinarySearch
 {
     internal class SortedArray
     {
-        int[] arr;
+        public List<int> arr;
+
 
 
         //constructors
-        public SortedArray(int[] arr)
+        public SortedArray(List<int> arr)
         {
             this.arr = arr;
         }
 
         public int BinarySearch(int target)
         {
-            return BinarySearchRecu(target, this.arr, 0, this.arr.Length);
+            return BinarySearchRecu(target, this.arr, 0, this.arr.Count);
         }
 
         //actual math
-        private int BinarySearchRecu(int target, int[] arr, int min, int max)
+        private int BinarySearchRecu(int target, List<int> arr, int min, int max)
         {
             //console writelines to catch my fuckups
             Console.WriteLine("min: " + min);
@@ -31,14 +32,14 @@ namespace BinarySearch
             Console.WriteLine("search: " + (max - (max - min) / 2));
 
             //gets mid between min and max and checks if its the target number in the array
-            if (arr[max - ((max - min) / 2)] == target)
+            if (arr[max - ((max - min) / 2) - 1] == target)
             {
                 return max - (max - min) / 2;
             }
             else if (min != max)
             {
                 //target is in lower half
-                if (arr[max - ((max - min) / 2)] > target)
+                if (arr[max - ((max - min) / 2) - 1] > target)
                 {
                     max = max - (max - min) / 2;
                     return BinarySearchRecu(target, arr, min, max);
@@ -50,8 +51,27 @@ namespace BinarySearch
                     return BinarySearchRecu(target, arr, min, max);
                 }
             }
-            //returns 0 if number not in array
-            return 0;
+            //returns -1 if number not in array
+            return -1;
+
+
+        }
+        public void InseertToSorted(int numberToInsert)
+        {
+            //loop throuh every index of the list to find a number bigger than the number to insert
+            for(int i = 0; i < arr.Count; i++)
+            {
+                //inserts at index just before higher value
+                if(arr[i] > numberToInsert)
+                {
+                    arr.Insert(i, numberToInsert);
+                    return;
+                }
+            }
+
+            //inserts at last index if no higher number found (number to insert must be highest)
+            arr.Add(numberToInsert);
+            return;
 
         }
     }
