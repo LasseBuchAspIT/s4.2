@@ -18,6 +18,7 @@ namespace BinarySearch
             this.arr = arr;
         }
 
+        //simplified method for easier access
         public int BinarySearch(int target)
         {
             return BinarySearchRecu(target, this.arr, 0, this.arr.Count);

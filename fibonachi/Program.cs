@@ -6,7 +6,16 @@ namespace fibonachi
     {
         static void Main(string[] args)
         {
-            FibRecuFirstNth(27);
+            var watch = System.Diagnostics.Stopwatch.StartNew();
+            FibRecuFirstNth(45);
+            watch.Stop();
+            Console.WriteLine("FibRecu: " + watch.Elapsed);
+
+            var watch2 = System.Diagnostics.Stopwatch.StartNew();
+            FibIter(45);
+            watch2.Stop();
+            Console.WriteLine("FibIter: " + watch2.Elapsed);
+
 
             // opg 1
             //recursive fib(extremely inefficient implimentation)
@@ -16,6 +25,7 @@ namespace fibonachi
 
                 return FibRecu(number - 1) + FibRecu(number - 2);
             }
+            
 
             //opg 2
             void FibRecuFirstNth(int number)
@@ -27,13 +37,13 @@ namespace fibonachi
             }
 
             //iterative fib
-            int FibIter(int number)
+            long FibIter(int number)
             {
                 Console.WriteLine(0);
                 long current = 1;
                 long last = 0;
                 long temp;
-                for (int i = 2; i < number; i++)
+                for (int i = 1; i < number; i++)
                 {
                     Console.WriteLine(current);
                     temp = current;
@@ -41,7 +51,7 @@ namespace fibonachi
                     last = temp;
                 }
 
-                return Convert.ToInt32(current);
+                return current;
             }
         }
     }

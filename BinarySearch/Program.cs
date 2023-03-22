@@ -7,6 +7,8 @@ namespace BinarySearch
     {
         static void Main(string[] args)
         {
+
+            
             //create random sorted array for testing
             Random rnd = new();
             List<int> sortedArr = new();
@@ -16,6 +18,7 @@ namespace BinarySearch
                 sortedArr.Add(rnd.Next(100));
             }
 
+            //sort array
             sortedArr.Sort();
 
             SortedArray arr = new SortedArray(sortedArr);
@@ -39,6 +42,8 @@ namespace BinarySearch
                 Console.WriteLine(value);
             }
 
+
+            
         }
     }
 }
