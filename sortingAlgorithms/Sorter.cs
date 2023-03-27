@@ -11,44 +11,47 @@ namespace sortingAlgorithms
     {
         public static List<int> BubbleSort(List<int> inputList)
         {
+            List<int> returnList = inputList;
             //repeat while not sorted
-            while (!IsSorted(inputList))
+            while (!IsSorted(returnList))
             {
                 //go through all elements
-                for(int i = 1; i < inputList.Count; i++)
+                for(int i = 1; i < returnList.Count; i++)
                 {
                     //check if former element is bigger than next
-                    if (inputList[i - 1] > inputList[i])
+                    if (returnList[i - 1] > returnList[i])
                     {
                         //if true swap elements
-                        int tmp = inputList[i];
-                        inputList[i] = inputList[i -1];
-                        inputList[i - 1] = tmp;
+                        int tmp = returnList[i];
+                        returnList[i] = returnList[i -1];
+                        returnList[i - 1] = tmp;
                         
                     }
                 }
             }
-            return inputList;
+            return returnList;
         }
 
         public static List<int> InsertionSort(List<int> inputList)
         {
-
-            for(int i = 1; i < inputList.Count; i++)
+            List<int> returnList = inputList;
+            for (int i = 1; i < returnList.Count; ++i)
             {
-                if (inputList[i] < inputList[i - 1])
+                int key = returnList[i];
+                int j = i - 1;
+        
+                // Move elements of arr[0..i-1],
+                // that are greater than key,
+                // to one position ahead of
+                // their current position
+                while (j >= 0 && returnList[j] > key)
                 {
-                    int tmpInt = i;
-                    while (inputList[tmpInt] < inputList[tmpInt - 1] && tmpInt > 0)
-                    {
-                        int tmp = inputList[i];
-                        inputList[i] = inputList[i - 1];
-                        inputList[i - 1] = tmp;
-                    }
+                    returnList[j + 1] = returnList[j];
+                    j = j - 1;
                 }
+                returnList[j + 1] = key;
             }
-
-            return new List<int>();
+            return returnList;
         }
             
 

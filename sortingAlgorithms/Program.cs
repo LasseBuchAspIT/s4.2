@@ -9,40 +9,40 @@ namespace sortingAlgorithms
             Random rnd = new();
             List<int> testArr = new();
 
-            for (int i = 0; i < 1000; i++)
+            for (int i = 0; i < 100000; i++)
             {
-                testArr.Add(rnd.Next(10000));
-            }
-
-            //output test array
-            foreach(int value in testArr)
-            {
-                Console.Write(value + ", ");
+                testArr.Add(rnd.Next(100000));
             }
 
 
-            //Stopwatch stopwatch = new Stopwatch();
-            //stopwatch.Start();
-            //Sorter.BubbleSort(testArr);
-            //stopwatch.Stop();
+            
 
 
             Stopwatch stopwatch = new Stopwatch();
             stopwatch.Start();
-            Sorter.InsertionSort(testArr);
+            List<int> bubbleList = Sorter.InsertionSort(new List<int>(testArr));
             stopwatch.Stop();
 
 
 
+
+            //insertion sort test
             //output test array again to see if sorting worked
             Console.WriteLine("\n sorted array: \n");
-            Console.WriteLine("stopwatch time: " + stopwatch.Elapsed);
-            foreach (int value in testArr)
-            {
-                Console.Write(value + ", ");
-            }
+            Console.WriteLine("bubblesort stopwatch time: " + stopwatch.Elapsed);
 
-            
+
+
+
+            Stopwatch stopwatch2 = new Stopwatch();
+            stopwatch2.Start();
+            List<int> inseertionList = Sorter.BubbleSort(new List<int>(testArr));
+            stopwatch2.Stop();
+
+            //bubble sort test
+            //output test array again to see if sorting worked
+            Console.WriteLine("\n sorted array: \n");
+            Console.WriteLine("Insertion stopwatch time: " + stopwatch2.Elapsed);
 
 
         }
