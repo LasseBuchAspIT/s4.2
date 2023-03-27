@@ -15,7 +15,15 @@ namespace BinarySearch
         //constructors
         public SortedArray(List<int> arr)
         {
-            this.arr = arr;
+            if (IsSorted(arr))
+            {
+                this.arr = arr;
+            }
+            else
+            {
+                arr.Sort();
+                this.arr = arr;
+            }
         }
 
         //simplified method for easier access
@@ -74,6 +82,24 @@ namespace BinarySearch
             arr.Add(numberToInsert);
             return;
 
+        }
+
+        //linear search
+        public bool IsSorted(List<int> inputList)
+        {
+            int previous = inputList[0];
+            foreach(int value in inputList)
+            {
+                if(previous > value)
+                {
+                    return false;
+                }
+                else
+                {
+                    previous = value;
+                }
+            }
+            return true;
         }
     }
 }
