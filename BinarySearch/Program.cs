@@ -33,7 +33,7 @@ namespace BinarySearch
 
 
             //method call
-            arr.InseertToSorted(56);
+            arr.InsertToSorted(56);
 
             //foreach loop to check if it worked
 

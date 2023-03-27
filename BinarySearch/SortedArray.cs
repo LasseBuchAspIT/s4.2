@@ -65,7 +65,7 @@ namespace BinarySearch
 
 
         }
-        public void InseertToSorted(int numberToInsert)
+        public void InsertToSorted(int numberToInsert)
         {
             //loop throuh every index of the list to find a number bigger than the number to insert
             for(int i = 0; i < arr.Count; i++)
