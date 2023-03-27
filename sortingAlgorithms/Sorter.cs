@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Transactions;
 
 namespace sortingAlgorithms
 {
@@ -23,12 +24,33 @@ namespace sortingAlgorithms
                         int tmp = inputList[i];
                         inputList[i] = inputList[i -1];
                         inputList[i - 1] = tmp;
-
+                        
                     }
                 }
             }
             return inputList;
         }
+
+        public static List<int> InsertionSort(List<int> inputList)
+        {
+
+            for(int i = 1; i < inputList.Count; i++)
+            {
+                if (inputList[i] < inputList[i - 1])
+                {
+                    int tmpInt = i;
+                    while (inputList[tmpInt] < inputList[tmpInt - 1] && tmpInt > 0)
+                    {
+                        int tmp = inputList[i];
+                        inputList[i] = inputList[i - 1];
+                        inputList[i - 1] = tmp;
+                    }
+                }
+            }
+
+            return new List<int>();
+        }
+            
 
         public static bool IsSorted(List<int> inputList)
         {
@@ -46,5 +68,7 @@ namespace sortingAlgorithms
             }
             return true;
         }
+
+
     }
 }
