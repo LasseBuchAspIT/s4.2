@@ -27,7 +27,7 @@ namespace BinarySearch
         }
 
         //simplified method for easier access
-        public int BinarySearch(int target)
+        public int BinarySearchRecuSimp(int target)
         {
             return BinarySearchRecu(target, this.arr, 0, this.arr.Count);
         }
@@ -65,6 +65,29 @@ namespace BinarySearch
 
 
         }
+
+
+        public int BinarySearchIter(int target)
+        {
+            int min = 0;
+            int max = arr.Count;
+            while (arr[max - ((max - min) / 2) - 1] != target)
+            {
+                if (arr[max - ((max - min) / 2) - 1] > target)
+                {
+                    max = max - (max - min) / 2;
+                }
+                else
+                {
+                    min = max - ((max - min) / 2);
+                }
+            }
+
+            return max - (max - min) / 2;
+        }
+
+
+
         public void InsertToSorted(int numberToInsert)
         {
             //loop throuh every index of the list to find a number bigger than the number to insert
