@@ -36,21 +36,21 @@ namespace BinarySearch
         private int BinarySearchRecu(int target, List<int> arr, int min, int max)
         {
             //console writelines to catch my fuckups
-            Console.WriteLine("min: " + min);
-            Console.WriteLine("max: " + max);
-            Console.WriteLine("search: " + (max - (max - min) / 2));
+            //Console.WriteLine("min: " + min);
+            //Console.WriteLine("max: " + max);
+            //Console.WriteLine("search: " + ((max - (max - min) / 2) - 1));
 
             //gets mid between min and max and checks if its the target number in the array
             if (arr[max - ((max - min) / 2) - 1] == target)
             {
-                return max - (max - min) / 2;
+                return max - (max - min) / 2 - 1;
             }
             else if (min != max)
             {
                 //target is in lower half
                 if (arr[max - ((max - min) / 2) - 1] > target)
                 {
-                    max = max - (max - min) / 2;
+                    max = max - (max - min) / 2 - 1;
                     return BinarySearchRecu(target, arr, min, max);
                 }
                 //target in upper half
@@ -67,15 +67,22 @@ namespace BinarySearch
         }
 
 
+
+
         public int BinarySearchIter(int target)
         {
             int min = 0;
-            int max = arr.Count;
+            int max = arr.Count - 1;
             while (arr[max - ((max - min) / 2) - 1] != target)
             {
+                if(min == max)
+                {
+                    return -1;
+                }
+
                 if (arr[max - ((max - min) / 2) - 1] > target)
                 {
-                    max = max - (max - min) / 2;
+                    max = max - (max - min) / 2 - 1;
                 }
                 else
                 {
@@ -83,9 +90,21 @@ namespace BinarySearch
                 }
             }
 
-            return max - (max - min) / 2;
+            return max - (max - min) / 2 - 1;
         }
 
+
+        public int LinearSearch(int target)
+        {
+            for(int i = 0; i < arr.Count; i++)
+            {
+                if (arr[i] == target)
+                {
+                    return i;
+                }
+            }
+            return -1;
+        }
 
 
         public void InsertToSorted(int numberToInsert)
