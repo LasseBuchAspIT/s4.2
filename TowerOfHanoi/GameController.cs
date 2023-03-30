@@ -33,9 +33,8 @@ namespace TowerOfHanoi
                 {
                     if(t.rings.Count >= i)
                     {
-                        Console.Write("|");
-                        Console.Write(new String(',', SquareSize));
-                        Console.Write("|");
+                        string output = new string(' ' ,(SquareSize - t.rings[i - 1].size) / 2) + new string('■', t.rings[i - 1].size) + new string(' ', (SquareSize - t.rings[i - 1].size) / 2);
+                        Console.Write("|" + output + "|");
                     }
                     else
                     {
