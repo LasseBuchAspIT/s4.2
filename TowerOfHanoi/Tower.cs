@@ -9,7 +9,12 @@ namespace TowerOfHanoi
 {
     public class Tower
     {
-        private List<Ring> rings = new List<Ring>();
+        public List<Ring> rings = new List<Ring>();
+
+        public Tower()
+        {
+            rings = new List<Ring>();
+        }
 
         public void add(Ring ring)
         {

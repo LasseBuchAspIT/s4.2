@@ -9,13 +9,16 @@ namespace TowerOfHanoi
     public class GameController
     {
         public Ring Selected = null;
-        int maxSquareSize;
-        private Tower[] towers = new Tower[3];
+        int SquareSize;
+        int ringCount;
+        private Tower[] towers = new Tower[3] { new(), new(), new() };
 
         public GameController(int ringCount)
         {
-            maxSquareSize = ringCount + 4; 
-            for(int i = ringCount; i >= 1; i -= 2)
+            this.ringCount = ringCount;
+            SquareSize = ringCount + 4; 
+            
+            for(int i = ringCount + 2; i >= 1; i -= 2)
             {
                 towers[0].add(new Ring(i));
             }
@@ -23,7 +26,25 @@ namespace TowerOfHanoi
 
         public void Draw()
         {
-            //draw new game scene
+            for(int i  = ringCount; i > 0; i--)
+            {
+                Console.WriteLine();
+                foreach(Tower t in towers)
+                {
+                    if(t.rings.Count >= i)
+                    {
+                        Console.Write("|");
+                        Console.Write(new String(',', SquareSize));
+                        Console.Write("|");
+                    }
+                    else
+                    {
+                        Console.Write("|");
+                        Console.Write(new String(' ', SquareSize));
+                        Console.Write("|");
+                    }
+                }
+            }
         }
 
         public void Move(Tower from, Tower to)
