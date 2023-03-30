@@ -9,7 +9,6 @@ namespace TowerOfHanoi
     public class Ring
     {
         public int size;
-        public int postition = 0;
 
         public Ring(int size)
         {

@@ -24,6 +24,18 @@ namespace TowerOfHanoi
             }
         }
 
+        public void moveTop(Tower destination)
+        {
+            if(destination.rings.Count == 0 || destination.rings.Last().size > rings.Last().size)
+            {
+                destination.add(rings.Last());
+                rings.Remove(rings.Last());
+            }
+            else
+            {
+                throw new ArgumentException("Cant add ring on top of smaller ring");
+            }
+        }
 
     }
 }

@@ -6,7 +6,7 @@
         static void Main(string[] args)
         {
             GameController gm = new(3);
-            gm.Draw();
+            gm.GameLoop();
         }
     }
 }
