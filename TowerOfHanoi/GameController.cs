@@ -9,15 +9,16 @@ namespace TowerOfHanoi
     public class GameController
     {
         public Ring Selected = null;
-        private string[,] map;
-
-        private Tower StartTower;
-        private Tower AuxTower;
-        private Tower EndTower;
+        int maxSquareSize;
+        private Tower[] towers = new Tower[3];
 
         public GameController(int ringCount)
         {
-            //generate map from ringcount
+            maxSquareSize = ringCount + 4; 
+            for(int i = ringCount; i >= 1; i -= 2)
+            {
+                towers[0].add(new Ring(i));
+            }
         }
 
         public void Draw()

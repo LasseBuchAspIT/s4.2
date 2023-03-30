@@ -11,21 +11,10 @@ namespace TowerOfHanoi
         public int size;
         public int postition = 0;
 
-        public Ring(int size, int postition)
+        public Ring(int size)
         {
             this.size = size;
-            this.postition = postition;
         }
 
-        public void MoveRing(int moveBy)
-        {
-            postition += moveBy;
-            string space = new string(' ', postition);
-            string shape = new string('■', size);
-            Console.Clear();
-            Console.Write(space);
-            Console.Write(shape);
-            
-        }
     }
 }

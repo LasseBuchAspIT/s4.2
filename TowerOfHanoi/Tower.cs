@@ -11,7 +11,13 @@ namespace TowerOfHanoi
     {
         private List<Ring> rings = new List<Ring>();
 
-
+        public void add(Ring ring)
+        {
+            if(ring.size  > 0)
+            {
+                rings.Add(ring);
+            }
+        }
 
 
     }
