@@ -21,7 +21,7 @@ namespace TowerOfHanoi
         public GameController(int ringCount)
         {
             this.ringCount = ringCount;
-            SquareSize = ringCount + 4; 
+            SquareSize = ringCount + (ringCount - 1); 
             SelectedTower = 0;
 
             for(int i = ringCount + (ringCount - 1); i >= 1; i -= 2)

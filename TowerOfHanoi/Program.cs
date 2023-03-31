@@ -5,7 +5,7 @@
     {
         static void Main(string[] args)
         {
-            GameController gm = new(5);
+            GameController gm = new(8);
             gm.GameLoop();
         }
     }
