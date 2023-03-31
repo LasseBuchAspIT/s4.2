@@ -63,24 +63,9 @@ namespace TowerOfHanoi
                     }
                 }
             }
+            msg = "";
         }
 
-        public void Move(Tower from, Tower to)
-        {   
-            //try to move ring and output alert if trying to make illegal move
-            try
-            {
-                from.moveTop(to);
-                //if success redraw scene
-
-            }
-            catch
-            {
-
-                msg = "Cant place on top of smaller ring";
-            }
-             
-        }
 
 
         //entire game executes from here
@@ -96,14 +81,28 @@ namespace TowerOfHanoi
                 {
                     if(SelectedRing != null)
                     {
-                        towers[SelectedRingTower].moveTop(towers[SelectedTower]);
-                        SelectedRing = null;
+                        try
+                        {
+                            towers[SelectedRingTower].moveTop(towers[SelectedTower]);
+                        }
+                        catch
+                        {
+                            msg = "Cant place on top of smaller ring";
+                        }
+                            SelectedRing = null;
 
                     }
                     else
                     {
-                        SelectedRing = towers[SelectedTower].rings.Last();
-                        SelectedRingTower = SelectedTower;
+                        if(towers[SelectedTower].rings.Count != 0)
+                        {
+                            SelectedRing = towers[SelectedTower].rings.Last();
+                            SelectedRingTower = SelectedTower;
+                        }
+                        else
+                        {
+                            msg = "the rings you are looking for are in another tower";
+                        }
                     }
                 }
                 else if(action == ConsoleKey.RightArrow)
@@ -128,8 +127,9 @@ namespace TowerOfHanoi
                         SelectedTower--;
                     }
                 }
-                msg = "";
             }
+            msg = "Congratulations! you win";
+            Draw();
         }
 
     }
