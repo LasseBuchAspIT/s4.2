@@ -24,7 +24,7 @@ namespace TowerOfHanoi
             SquareSize = ringCount + 4; 
             SelectedTower = 0;
 
-            for(int i = ringCount + 2; i >= 1; i -= 2)
+            for(int i = ringCount + (ringCount - 1); i >= 1; i -= 2)
             {
                 towers[0].add(new Ring(i));
             }
@@ -41,19 +41,19 @@ namespace TowerOfHanoi
                 Console.WriteLine();
                 foreach (Tower t in towers)
                 {
-                    if(t.rings.Count >= i)
+                    if (t == towers[SelectedTower])
+                    {
+                        Console.ForegroundColor = ConsoleColor.Red;
+                    }
+                    if (t.rings.Count >= i)
                     {
                         if(t.rings[i - 1] == SelectedRing)
                         {
                             Console.ForegroundColor = ConsoleColor.Green;
                         }
-                        else if(t == towers[SelectedTower])
-                        {
-                            Console.ForegroundColor = ConsoleColor.Red;
-                        }
+
                         string output = new string(' ' ,(SquareSize - t.rings[i - 1].size) / 2) + new string('■', t.rings[i - 1].size) + new string(' ', (SquareSize - t.rings[i - 1].size) / 2);
                         Console.Write("|" + output + "|");
-                        Console.ForegroundColor = ConsoleColor.White;
                     }
                     else
                     {
@@ -61,6 +61,7 @@ namespace TowerOfHanoi
                         Console.Write(new String(' ', SquareSize));
                         Console.Write("|");
                     }
+                        Console.ForegroundColor = ConsoleColor.White;
                 }
             }
             msg = "";
