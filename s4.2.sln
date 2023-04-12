@@ -17,7 +17,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BinaryTree", "BinaryTree\Bi
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "sortingAlgorithms", "sortingAlgorithms\sortingAlgorithms.csproj", "{67679690-90E6-4BB2-BAD2-F84A1AA7B759}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TowerOfHanoi", "TowerOfHanoi\TowerOfHanoi.csproj", "{EFB381E9-0A89-4BE5-955D-9C0357B12810}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TowerOfHanoi", "TowerOfHanoi\TowerOfHanoi.csproj", "{EFB381E9-0A89-4BE5-955D-9C0357B12810}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataStructures", "DataStructures\DataStructures.csproj", "{0DFA3766-76B0-444C-957B-CDEBA2B4D25E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -57,6 +59,10 @@ Global
 		{EFB381E9-0A89-4BE5-955D-9C0357B12810}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EFB381E9-0A89-4BE5-955D-9C0357B12810}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EFB381E9-0A89-4BE5-955D-9C0357B12810}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0DFA3766-76B0-444C-957B-CDEBA2B4D25E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0DFA3766-76B0-444C-957B-CDEBA2B4D25E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0DFA3766-76B0-444C-957B-CDEBA2B4D25E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0DFA3766-76B0-444C-957B-CDEBA2B4D25E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
