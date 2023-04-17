@@ -35,7 +35,8 @@ namespace DataStructures
             {
                 if(elements >= length)
                 {
-
+                    ReSize(length + 20);
+                    length += 20;
                 }
 
                 
@@ -51,7 +52,16 @@ namespace DataStructures
 
         protected void ReSize(int newSize)
         {
-
+            if(newSize < length)
+            {
+                throw new ArgumentOutOfRangeException("array cannot be made smaller");
+            }
+            T[] newData = new T[newSize];
+            for(int i = 0; i < length; i++)
+            {
+                newData[i] = data[i];
+            }
+            data = newData;
         }
 
         protected void Remove(int index)
